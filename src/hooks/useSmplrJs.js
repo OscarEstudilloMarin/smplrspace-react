@@ -35,7 +35,7 @@ export function useSmplrJsUMD({ onLoad, dev = false }) {
 export function useSmplrJsESM({ onLoad, dev = false }) {
   useStylesheet(SMPLR.css[dev ? "dev" : "prod"]);
   useEffect(() => {
-    import(SMPLR.esm[dev ? "dev" : "prod"]).then(onLoad);
+    // import(SMPLR.esm[dev ? "dev" : "prod"]).then(onLoad);
   }, [onLoad, dev]);
 }
 
