@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HelloWorldMain from "./pages/hello-world/HelloWorldMain";
+import CustomMain from "./pages/custom-test/CustomMain";
+import Index from "./pages/index";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Index />} />
+          <Route path='*' element={<Index />} />
+          <Route path='/hello-world' element={<HelloWorldMain />} />
+          <Route path='/custom-test' element={<CustomMain />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
